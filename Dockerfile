@@ -1,27 +1,19 @@
-# Use official PHP image with Apache
+# Use official PHP with Apache
 FROM php:8.2-apache
 
-# Set working directory
 WORKDIR /var/www/html
 
-# Copy the project files to container
+# Copy project files
 COPY . /var/www/html/
 
-# Enable Apache mod_rewrite (needed for URL routing)
+# Enable Apache rewrite module
 RUN a2enmod rewrite
 
-# Install mysqli extension for MySQL connections
+# Install mysqli extension
 RUN docker-php-ext-install mysqli
 
-# Set environment variables (optional defaults)
-ENV DB_HOST=localhost \
-    DB_NAME=wedding_planner \
-    DB_USER=root \
-    DB_PASS= \
-    DB_PORT=3306
+# Expose port 10000 (Render passes $PORT automatically)
+EXPOSE 10000
 
-# Expose default port for Apache
-EXPOSE 80
-
-# Start Apache server
+# Start Apache
 CMD ["apache2-foreground"]
