@@ -1,0 +1,122 @@
+/* --- Global Variables (Simplified for client side) --- */
+:root {
+    --color-primary: #004f99;     /* Dark Blue */
+    --color-accent: #007bff;      /* Bright Blue */
+    --color-text-dark: #333;
+    --color-border: #ccc;
+    --color-success: #28a745;     /* Green */
+    --color-cancelled: #dc3545;   /* Red */
+    --border-radius-sm: 6px;
+    --shadow-base: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* --- Base Styles --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-text-dark);
+    background-color: #f8f9fa; /* Light background */
+    line-height: 1.6;
+}
+
+/* --- Form Container --- */
+.form-container { 
+    max-width: 500px; 
+    margin: 50px auto; 
+    padding: 30px; 
+    background-color: #fff;
+    border-radius: var(--border-radius-sm); 
+    box-shadow: var(--shadow-base);
+    border: 1px solid #e0e0e0;
+}
+
+.form-container h2 {
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Paragraph wrapper for label/input */
+.form-container p {
+    margin-bottom: 15px;
+}
+
+/* Label Styling */
+.form-container label {
+    display: block; /* Make the label sit above the input */
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+/* Input and Textarea Styling */
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--color-border);
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.form-container textarea {
+    resize: vertical;
+}
+
+.form-container input:focus,
+.form-container textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 79, 153, 0.1); /* Light shadow on focus */
+}
+
+/* --- Button Styling --- */
+.form-container button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.form-container button[type="submit"]:hover {
+    background-color: #003366; /* Darker blue on hover */
+}
+
+/* --- Success and Error Messages --- */
+.success, .error {
+    padding: 10px;
+    border-radius: var(--border-radius-sm);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.success {
+    background-color: #d4edda;
+    color: var(--color-success);
+    border: 1px solid #c3e6cb;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: var(--color-cancelled);
+    border: 1px solid #f5c6cb;
+}
+
+/* --- Media Query for Mobile --- */
+@media (max-width: 540px) {
+    .form-container {
+        margin: 20px 10px;
+        padding: 20px;
+    }
+}

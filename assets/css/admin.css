@@ -1,0 +1,216 @@
+/* === GLOBAL STYLES === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* === SIDEBAR === */
+.sidebar {
+    width: 250px;
+    background-color: #004f99;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.sidebar-logo i {
+    font-size: 28px;
+    color: #004f99;
+}
+
+.sidebar-logo h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.sidebar-menu {
+    list-style: none;
+    width: 100%;
+}
+
+.sidebar-menu li {
+    margin-bottom: 15px;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #e0e0e0;
+    font-weight: 500;
+    padding: 10px 12px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.sidebar-menu a i {
+    font-size: 16px;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu a.active {
+    background-color: #0055cc;
+    color: #fff;
+}
+
+.logout {
+    margin-top: auto;
+    color: #ffcccc;
+}
+
+.logout:hover {
+    background-color: #004f99;
+    color: #fff;
+}
+
+/* === MAIN CONTENT === */
+.dashboard-content {
+    margin-left: 250px;
+    padding: 30px 40px;
+    width: calc(100% - 250px);
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.dashboard-header h2 {
+    color: #004f99;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dashboard-header i {
+    color:#0055cc;
+}
+
+/* === DASHBOARD GRID === */
+.dashboard-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 25px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 calc(25% - 25px); /* ✅ ensures cards align neatly */
+    min-width: 220px;
+    max-width: 280px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.card i {
+    font-size: 40px;
+    color: #004f99;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 18px;
+    color: #004f99;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.card-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #004f99;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.card-btn:hover {
+    background-color:#0055cc;
+}
+
+
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 1024px) {
+    .card {
+        flex: 1 1 calc(33.333% - 25px);
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .dashboard-content {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+    }
+
+    .card {
+        flex: 1 1 calc(50% - 25px);
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar {
+        display: none;
+    }
+
+    .dashboard-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .dashboard-grid {
+        justify-content: center;
+    }
+
+    .card {
+        flex: 1 1 100%;
+    }
+}

@@ -1,0 +1,240 @@
+/* --- General Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    font-size: 16px;
+}
+
+/* --- Admin Container --- */
+.admin-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 20px; /* Added padding to give space at the top */
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    width: 250px;
+    background-color: #007bff;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.sidebar-header h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-nav ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.sidebar-nav ul li a i {
+    margin-right: 10px;
+}
+
+.sidebar-nav ul li a:hover {
+    background-color: #0056b3;
+}
+
+.sidebar-nav ul li a.active {
+    background-color: #28a745;
+}
+
+/* --- Main Content --- */
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    margin-left: 50px; /* Adjusted for the sidebar */
+    padding-right: 20px; /* Padding on the right */
+}
+
+.logout-btn {
+    padding: 12px 20px;
+    background-color: #e74c3c; /* Red for logout */
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+    width: 100%; /* Full-width logout button */
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b; /* Darker red on hover */
+}
+
+/* --- Search Bar --- */
+.search-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+.search-form input {
+    width: 75%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.search-form button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* --- Messages Table --- */
+.messages-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+.messages-table th, .messages-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.messages-table th {
+    background-color: #007bff;
+    color: white;
+}
+
+.messages-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* --- Aligning Buttons --- */
+.messages-table .btn-primary, .messages-table .btn-danger, .messages-table .btn-warning, .messages-table .btn-success {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.messages-table .btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.messages-table .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.messages-table .btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.messages-table .btn-danger:hover {
+    background-color: #c82333;
+}
+
+.messages-table .btn-warning {
+    background-color: #ffc107;
+    color: white;
+}
+
+.messages-table .btn-warning:hover {
+    background-color: #e0a800;
+}
+
+.messages-table .btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.messages-table .btn-success:hover {
+    background-color: #218838;
+}
+
+/* --- Pagination --- */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+.pagination .btn-primary {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.pagination .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.page-numbers a {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.page-numbers a:hover {
+    background-color: #218838;
+}
+
+.page-numbers a.active {
+    background-color: #007bff;
+}

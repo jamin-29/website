@@ -1,0 +1,177 @@
+/* ======== Global Reset ======== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ======== Page Background ======== */
+body {
+  background: linear-gradient(135deg, #004f99, #007bff);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* ======== Login/Register Container ======== */
+.login-container {
+  background: #ffffff;
+  width: 380px;
+  padding: 35px 30px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+}
+
+/* ======== Header Text ======== */
+.login-container h2 {
+  color: #004f99;
+  margin-bottom: 25px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* ======== Input Groups ======== */
+.input-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cfd8dc;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+  outline: none;
+}
+
+/* ======== Buttons ======== */
+button {
+  width: 100%;
+  background: #004f99;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #007bff;
+}
+
+/* ======== Text Links ======== */
+p {
+  font-size: 14px;
+  margin-top: 15px;
+  color: #444;
+}
+
+p a {
+  color: #004f99;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+/* ======== Back to Home Link ======== */
+.back-home {
+  display: inline-block;
+  margin-top: 15px;
+  color: #007bff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.back-home:hover {
+  color: #004f99;
+}
+
+/* ======== Error / Success ======== */
+.error, .success {
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.error {
+  background-color: #ffe6e6;
+  color: #d9534f;
+}
+
+.success {
+  background-color: #e6ffe6;
+  color: #28a745;
+}
+
+/* ======== Floating Book Button (Improved) ======== */
+.btn-floating-book {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: linear-gradient(135deg, #004f99, #007bff);
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 50px;
+  box-shadow: 0 6px 20px rgba(0, 79, 153, 0.25);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.btn-floating-book:hover {
+  background: linear-gradient(135deg, #0066cc, #0099ff);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 79, 153, 0.35);
+}
+
+/* Optional: Add an icon to the button */
+.btn-floating-book i {
+  margin-right: 8px;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+/* ======== Animation ======== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

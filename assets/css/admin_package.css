@@ -1,0 +1,372 @@
+/*========================================================
+ * ADMIN PACKAGES STYLESHEET (Extension of core panel styles)
+ *
+ * NOTE: This file assumes the core styles for the sidebar,
+ * header, .service-table, and .form-container are included
+ * via a main admin panel stylesheet, or this file contains
+ * the necessary structure from admin_panel.css.
+ * * For simplicity, we include the necessary variables,
+ * table, and form styles for standalone use.
+ *========================================================*/
+
+/* === CSS VARIABLES (Required for stand-alone styling) === */
+:root {
+    /* Colors */
+    --color-primary: #004f99;
+    --color-primary-dark: #003366;
+    --color-accent: #007bff;
+    --color-bg-light: #f4f6f9;
+    --color-text-dark: #333;
+    --color-text-light: #f0f8ff;
+    --color-border: #e0e0e0;
+    --color-success: #28aa45;
+    --color-pending: #ffc107;
+    --color-cancelled: #dc3545;
+
+    /* Spacing */
+    --space-sm: 10px;
+    --space-md: 20px;
+    --space-lg: 30px;
+
+    /* Radius */
+    --border-radius-sm: 6px;
+    --border-radius-lg: 12px;
+    --shadow-base: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* === CORE LAYOUT STYLES (Required for manage_packages.php to display correctly) === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark);
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    /* Simplified structure */
+    width: 250px;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-content {
+    margin-left: 250px;
+    padding: var(--space-lg) 40px;
+    width: calc(100% - 250px);
+    flex-grow: 1;
+}
+
+/* --- Sidebar Menu Styles (Essentials) --- */
+.sidebar-menu {
+    list-style: none;
+    width: 100%;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--color-text-light);
+    padding: 10px 12px;
+    border-radius: var(--border-radius-sm);
+    transition: 0.2s;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu a.active {
+    background-color: var(--color-primary-dark);
+    color: #fff;
+}
+
+.logout {
+    margin-top: auto;
+    color: #ffcccc;
+}
+
+
+/* --- Header & Add Button Styles --- */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-sm);
+}
+
+.dashboard-header h2 {
+    color: var(--color-primary);
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dashboard-header i {
+    color: var(--color-accent);
+}
+
+.dashboard-header .add-btn {
+    background-color: var(--color-accent);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: var(--border-radius-sm);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.2s;
+}
+
+.dashboard-header .add-btn:hover {
+    background-color: var(--color-primary-dark);
+}
+
+
+/* === TABLE STYLES (Used by manage_packages.php) === */
+.table-section {
+    overflow-x: auto;
+    background-color: #fff;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-base);
+    padding: 1px;
+}
+
+.service-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+    /* Adjusted min-width */
+}
+
+.service-table th,
+.service-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.service-table th {
+    background-color: #f8f8f8;
+    color: var(--color-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.service-table tbody tr:hover {
+    background-color: #fafafa;
+}
+
+/* Actions Column */
+.actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.actions a {
+    text-decoration: none;
+    padding: 8px;
+    border-radius: var(--border-radius-sm);
+    transition: 0.2s;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.actions .edit-btn {
+    color: var(--color-primary);
+}
+
+.actions .delete-btn {
+    color: var(--color-cancelled);
+}
+
+.actions .delete-btn:hover {
+    background-color: rgba(224, 62, 54, 0.1);
+}
+
+
+/* === FORM CONTAINER (Needed for add_package.php / edit_package.php) === */
+.form-container {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-base);
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-container .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-container label {
+    font-weight: 600;
+    color: var(--color-primary);
+    font-size: 14px;
+}
+
+/* Form Controls */
+.form-container input,
+.form-container select,
+.form-container textarea {
+    padding: 10px 12px;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid #ccc;
+    font-size: 14px;
+    width: 100%;
+    transition: border-color 0.2s;
+    height: 40px;
+}
+
+.form-container textarea {
+    height: auto;
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Buttons */
+.form-container button[type="submit"] {
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.form-container .back-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: var(--border-radius-sm);
+    font-size: 14px;
+    font-weight: 500;
+    width: 100%;
+    transition: 0.3s;
+}
+
+
+/* --- PAGINATION --- */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--space-lg);
+    gap: 5px;
+}
+
+.pagination a {
+    display: block;
+    padding: 8px 14px;
+    text-decoration: none;
+    color: var(--color-primary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    transition: 0.2s;
+    font-size: 14px;
+}
+
+.pagination a.active {
+    background-color: var(--color-primary);
+    color: #fff;
+    border-color: var(--color-primary);
+    font-weight: 600;
+}
+
+
+/* === RESPONSIVENESS (Ensure forms work well) === */
+
+/* Form Tablet/Small Desktop Grid Layout */
+@media (min-width: 480px) {
+    .form-container form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    /* Fields that should span the entire width (Name, Description/Textarea) */
+    .form-container .input-group:has(input[name="package_name"]),
+    .form-container .input-group:has(textarea[name="description"]) {
+        grid-column: span 2;
+    }
+
+    /* Price and Status/Other inputs sit side-by-side (default 1fr) */
+
+    /* Buttons span full width and stack if necessary, but here we set side-by-side */
+    .form-container button[type="submit"] {
+        grid-column: 1 / 2;
+    }
+
+    .form-container .back-btn {
+        grid-column: 2 / 3;
+    }
+}
+
+/* Mobile adjustments (if sidebar is hidden) */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .dashboard-content {
+        margin-left: 0;
+        width: 100%;
+        padding: var(--space-md);
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-sm);
+    }
+
+    .service-table {
+        min-width: 600px;
+    }
+
+    /* Ensure table stays scrollable */
+
+    /* Ensure form inputs go back to fully stacked on small mobiles */
+    .form-container form {
+        display: flex;
+        flex-direction: column;
+    }
+}

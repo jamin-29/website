@@ -1,0 +1,179 @@
+/* Reset basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff; /* Light blue background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Login / Sign Up Container */
+.login-container {
+    background-color: #ffffff;
+    border-radius: 12px; /* Rounded corners for a more modern feel */
+    padding: 40px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Soft shadows for a floating effect */
+    width: 100%;
+    max-width: 420px; /* A bit larger max width */
+    text-align: center;
+}
+
+/* Heading */
+h2 {
+    color: #004f99;
+    margin-bottom: 30px;
+    font-size: 28px; /* Larger heading for better visibility */
+    font-weight: 600;
+}
+
+/* Error and Success Messages */
+.error-message, .success-message {
+    font-size: 14px;
+    margin-bottom: 20px;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.error-message {
+    color: white;
+    background-color: #e74c3c; /* Red background for error */
+}
+
+.success-message {
+    color: white;
+    background-color: #2ecc71; /* Green background for success */
+}
+
+/* Input Fields */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 16px; /* Larger padding for easier typing */
+    margin: 15px 0;
+    border: 1px solid #b0c4de; /* Light blue border */
+    border-radius: 8px; /* Softer edges */
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Focused Input Fields */
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus {
+    border-color: #1e90ff; /* Blue border on focus */
+    background-color: #e6f7ff; /* Light blue background when focused */
+    outline: none;
+}
+
+/* Button */
+.login-btn {
+    width: 100%;
+    padding: 16px;
+    background-color: #1e90ff; /* Blue button */
+    color: #fff;
+    border: none;
+    border-radius: 8px; /* Softer button edges */
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #4682b4; /* Darker blue on hover */
+    transform: scale(1.05); /* Button slightly grows on hover */
+}
+
+.login-btn:active {
+    background-color: #1c6fa1; /* Even darker blue when clicked */
+}
+
+/* Link (Sign up / Log in Link) */
+.login-link, .signup-link {
+    margin-top: 25px;
+    font-size: 16px;
+}
+
+.login-link a, .signup-link a {
+    color: #1e90ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover, .signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design (for small screens) */
+@media (max-width: 600px) {
+    .login-container {
+        width: 90%; /* Allow container to be responsive on small screens */
+        padding: 30px; /* Padding adjustment for small screens */
+    }
+
+    h2 {
+        font-size: 24px; /* Slightly smaller heading for small screens */
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="password"] {
+        padding: 14px; /* Slightly smaller padding on inputs for mobile */
+        font-size: 14px; /* Smaller font size on mobile */
+    }
+
+    .login-btn {
+        padding: 14px; /* Smaller padding on button */
+        font-size: 16px; /* Slightly smaller font size on mobile */
+    }
+}
+
+/* Accessibility: High Contrast Mode */
+@media (prefers-contrast: high) {
+    body {
+        background-color: #ffffff;
+    }
+
+    .login-container {
+        background-color: #f0f8ff; /* Light blue for high contrast */
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .error-message {
+        background-color: #d32f2f; /* More intense red for error */
+    }
+
+    .success-message {
+        background-color: #388e3c; /* More intense green for success */
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="password"] {
+        background-color: #f0f0f0; /* Lighter background */
+        border-color: #4caf50; /* Better contrast border */
+    }
+
+    .login-btn {
+        background-color: #388e3c; /* Green button for high contrast */
+        color: #fff;
+    }
+
+    .login-btn:hover {
+        background-color: #2c6b2f; /* Darker green hover */
+    }
+}

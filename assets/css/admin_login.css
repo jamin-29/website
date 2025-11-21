@@ -1,0 +1,179 @@
+/* ============================
+   GLOBAL STYLES
+============================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #004f99, #007bff, #66a6ff);
+    background-size: 200% 200%;
+    animation: bgMove 8s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ============================
+   CONTENT AREA
+============================ */
+.content {
+    background: #ffffff;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 79, 153, 0.25);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.content h1 {
+    color: #004f99;
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+/* ============================
+   FORM STYLES
+============================ */
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+label {
+    margin-bottom: 6px;
+    color: #333;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    font-size: 15px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+    outline: none;
+}
+
+/* ============================
+   BUTTONS
+============================ */
+.btn-primary {
+    width: 100%;
+    background: linear-gradient(135deg, #004f99, #007bff);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0066cc, #0099ff);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 79, 153, 0.25);
+}
+
+/* ============================
+   BACK & LINK BUTTONS
+============================ */
+.btn-back, .btn-floating-book {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+/* Back to Landing Page Button */
+.btn-back {
+    color: #004f99;
+}
+
+.btn-back:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+/* Floating Book Button */
+.btn-floating-book {
+    background: linear-gradient(135deg, #004f99, #007bff);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 79, 153, 0.25);
+}
+
+.btn-floating-book:hover {
+    background: linear-gradient(135deg, #0066cc, #0099ff);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 79, 153, 0.3);
+}
+
+/* ============================
+   ICON STYLING (Font Awesome)
+============================ */
+h1 i {
+    margin-right: 8px;
+    color: #007bff;
+}
+
+label i {
+    margin-right: 6px;
+    color: #004f99;
+}
+
+.btn-primary i,
+.btn-back i,
+.btn-floating-book i {
+    margin-right: 6px;
+}
+
+/* Floating Book Icon Glow */
+.btn-floating-book i {
+    color: #fff;
+}
+
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 480px) {
+    .content {
+        padding: 30px 25px;
+        width: 90%;
+    }
+
+    .content h1 {
+        font-size: 22px;
+    }
+}
